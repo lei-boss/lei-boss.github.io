@@ -2841,7 +2841,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #d690b6;
+  background: #ecff55;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2866,4 +2866,67 @@ hr {
 }
 .sub-menu .menu-item {
   display: inline-block;
+}
+body {
+  background: url("/images/background/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+.post-block {
+  padding: 40px;
+  background: #fff;
+  box-shadow: $box-shadow-inner;
+  border-radius: $border-radius-inner;
+}
+.comments {
+  padding: 40px;
+  margin: initial;
+  margin-top: sboffset;
+  background: rgba(255,255,255,0.9);
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+.header-inner {
+  opacity: 1;
+}
+.header {
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
+}
+.container .main-inner {
+  width: 90%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .main-inner {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .container .main-inner {
+    width: 100%;
+  }
+}
+.content-wrap {
+  width: calc(100% - 260px);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100%;
+  }
 }
