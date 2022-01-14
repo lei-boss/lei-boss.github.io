@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>java-day01</title>
+    <url>/2022/01/14/java-day01/</url>
+    <content><![CDATA[<p>这是关于java环境变量安装的一些步骤</p>
+<span id="more"></span>
+<h1 id="java在各个系统中的安装步骤"><a href="#java在各个系统中的安装步骤" class="headerlink" title="java在各个系统中的安装步骤"></a>java在各个系统中的安装步骤</h1><h2 id="一：Windows"><a href="#一：Windows" class="headerlink" title="一：Windows"></a>一：Windows</h2><h3 id="1-jdk安装包"><a href="#1-jdk安装包" class="headerlink" title="1.jdk安装包"></a>1.jdk安装包</h3><p>(链接：<a href="https://pan.baidu.com/s/17BamvwOmnVrJiWeQloD0cw">https://pan.baidu.com/s/17BamvwOmnVrJiWeQloD0cw</a> 提取码：lxy1)</p>
+<h3 id="2-打开安装包，除了安装路径以外其他的可以默认下一步。"><a href="#2-打开安装包，除了安装路径以外其他的可以默认下一步。" class="headerlink" title="2.打开安装包，除了安装路径以外其他的可以默认下一步。"></a>2.打开安装包，除了安装路径以外其他的可以默认下一步。</h3><h3 id="3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："><a href="#3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：" class="headerlink" title="3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："></a>3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：</h3><img src="/images/java-images/java-jdk.png" width="35%" height="35%" />
+
+<h3 id="4-找到高级系统设置，点击环境变量"><a href="#4-找到高级系统设置，点击环境变量" class="headerlink" title="4.找到高级系统设置，点击环境变量:"></a>4.找到高级系统设置，点击环境变量:</h3><img src="/images/java-images/java-jdk-1.png" width="35%" height="35%" />
+
+<h3 id="5-在系统变量中点击新建"><a href="#5-在系统变量中点击新建" class="headerlink" title="5.在系统变量中点击新建"></a>5.在系统变量中点击新建</h3><p>变量名输入 ： <strong>JAVA_HOME</strong><br>变量值： 输入你安装jdk的根目录（注意：下图是我的安装目录）<br><img src="/images/java-images/java-jdk-2.png" width="35%" height="35%" /><br><img src="/images/java-images/java-jdk-3.png" width="35%" height="35%" /></p>
+<h3 id="6-在系统变量中找到path点击编辑："><a href="#6-在系统变量中找到path点击编辑：" class="headerlink" title="6.在系统变量中找到path点击编辑："></a>6.在系统变量中找到path点击编辑：</h3><p>在最下面加入： <strong>%JAVA_HOME%\bin</strong></p>
+<img src="/images/java-images/java-jdk-4.png" width="35%" height="35%" />
+<img src="/images/java-images/java-jdk-5.png" width="35%" height="35%" />
+
+<h3 id="7-键盘：-win-r-输入cmd-点击确定，分别输入以下命令查看是否安装成功"><a href="#7-键盘：-win-r-输入cmd-点击确定，分别输入以下命令查看是否安装成功" class="headerlink" title="7.键盘： win+r ,输入cmd,点击确定，分别输入以下命令查看是否安装成功"></a>7.键盘： win+r ,输入cmd,点击确定，分别输入以下命令查看是否安装成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java</span><br><span class="line">javac</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<img src="/images/java-images/java-java.png" width="35%" height="35%" />
+<img src="/images/java-images/java-javac.png" width="35%" height="35%" />
+<img src="/images/java-images/java-java-version.png" width="35%" height="35%" />]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>文章一（各种格式的示例学习）</title>
+    <url>/2022/01/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E9%81%8D%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="雷哥文章一"><a href="#雷哥文章一" class="headerlink" title="雷哥文章一"></a>雷哥文章一</h1><span id="more"></span>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
+<li>列表一</li>
+<li>列表二<br>  a 子列表一</li>
+<li>列表三<br>  a 子列表一<br>  b 子列表二<br><a href="http://www.baidu.com/">百度</a><br><img src="https://addimagesaddress-1308114002.cos.ap-beijing.myqcloud.com/1638439047317.png" alt="图片"><br>虚线分割用三个-</li>
+</ul>
+<hr>
+<p>斜体：<em>一个星号斜体</em><br>加粗：<strong>两个星号加粗</strong></p>
+<p>引用代码单行用一个：<code>&lt;html&gt;&lt;/html&gt;</code><br>引用代码多行用三个</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;俺是标题&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;h1&gt;掉毛&lt;/h1&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/01/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -18,26 +61,8 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>文章一（各种格式的示例学习）</title>
-    <url>/2022/01/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E9%81%8D%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="雷哥文章一"><a href="#雷哥文章一" class="headerlink" title="雷哥文章一"></a>雷哥文章一</h1><span id="more"></span>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
-<li>列表一</li>
-<li>列表二<br>  a 子列表一</li>
-<li>列表三<br>  a 子列表一<br>  b 子列表二<br><a href="http://www.baidu.com/">百度</a><br><img src="https://addimagesaddress-1308114002.cos.ap-beijing.myqcloud.com/1638439047317.png" alt="图片"><br>虚线分割用三个-</li>
-</ul>
-<hr>
-<p>斜体：<em>一个星号斜体</em><br>加粗：<strong>两个星号加粗</strong></p>
-<p>引用代码单行用一个：<code>&lt;html&gt;&lt;/html&gt;</code><br>引用代码多行用三个</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;俺是标题&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;h1&gt;掉毛&lt;/h1&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>前端</category>
+        <category>哈哈</category>
       </categories>
-      <tags>
-        <tag>个人</tag>
-        <tag>分享</tag>
-      </tags>
   </entry>
 </search>
