@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/black/pace-theme-loading-bar.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"self-discipline.vip","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Burpsuite是用java编写的，用于web安全审计和扫描，它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。安全人员可以用它进行网络安全审计，开发人员也可以使用该工具进行网站压测与攻击测试。检测web应用程序的安全问题。注意：该工具是由java编写的，所以使用前需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Burp Suite学习笔记">
+<meta property="og:url" content="https://self-discipline.vip/2022/01/15/burpsuite-01/index.html">
+<meta property="og:site_name" content="雷哥个人博客">
+<meta property="og:description" content="Burpsuite是用java编写的，用于web安全审计和扫描，它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。安全人员可以用它进行网络安全审计，开发人员也可以使用该工具进行网站压测与攻击测试。检测web应用程序的安全问题。注意：该工具是由java编写的，所以使用前需">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/1.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/2.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/3.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/4.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/5.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/6.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/7.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/6.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/8.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/9.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/10.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/11.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/12.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/13.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/1.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/2.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/3.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/4.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/5.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/6.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/7.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/8.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/9.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/10.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/11.png">
+<meta property="og:image" content="https://self-discipline.vip/images/burpsuite/burp-liuliang/12.png">
+<meta property="article:published_time" content="2022-01-15T12:01:09.000Z">
+<meta property="article:modified_time" content="2022-01-15T13:43:05.621Z">
+<meta property="article:author" content="LEI GE">
+<meta property="article:tag" content="burpsuite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://self-discipline.vip/images/burpsuite/1.png">
+
+
+<link rel="canonical" href="https://self-discipline.vip/2022/01/15/burpsuite-01/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://self-discipline.vip/2022/01/15/burpsuite-01/","path":"2022/01/15/burpsuite-01/","title":"Burp Suite学习笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Burp Suite学习笔记 | 雷哥个人博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+  
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">雷哥个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">欢迎你的到来,阅读愉快！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BurpSuite%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E6%BF%80%E6%B4%BB"><span class="nav-number">1.</span> <span class="nav-text">BurpSuite的安装与激活</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">一：安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%9A%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%E5%8E%8B%E7%BC%A9%E5%8C%85%E3%80%82"><span class="nav-number">1.1.1.</span> <span class="nav-text">1：下载软件压缩包。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%9A%E8%A7%A3%E5%8E%8B%E5%8E%8B%E7%BC%A9%E5%8C%85-%E7%84%B6%E5%90%8E%E8%BF%9B%E5%8E%BB%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD-%E6%89%BE%E5%88%B0%E5%A6%82%E4%B8%8B%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6-CN%E7%9A%84%E6%98%AF%E4%B8%AD%E6%96%87%E7%89%88-EN%E7%9A%84%E6%98%AF%E8%8B%B1%E6%96%87%E7%89%88-%E5%8F%AF%E4%BB%A5%E8%87%AA%E8%A1%8C%E9%80%89%E6%8B%A9%E4%B8%80%E6%AC%BE%E5%8F%8C%E5%87%BB%E8%BF%90%E8%A1%8C%E3%80%82"><span class="nav-number">1.1.2.</span> <span class="nav-text">2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E4%B8%AA%EF%BC%8C%E4%B8%8D%E9%9C%80%E8%A6%81%E6%9B%B4%E6%94%B9%E3%80%82"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.点击下一个，不需要更改。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%82%B9%E5%87%BB%E5%BC%80%E5%A7%8Bburp%E4%B8%8D%E9%9C%80%E8%A6%81%E6%9B%B4%E6%94%B9%E3%80%82"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.点击开始burp不需要更改。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%94%B1%E4%BA%8E%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%BF%9B%E5%85%A5%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E6%B3%A8%E5%86%8C-%E6%89%BE%E5%88%B0%E5%B8%AE%E5%8A%A9%E7%AA%97%E5%8F%A3%E4%B8%8B%E7%9A%84%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%82%B9%E5%87%BB%E3%80%82"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E8%AE%B8%E5%8F%AF%E8%AF%81%E5%AF%86%E9%92%A5%E6%9B%B4%E6%96%B0%E3%80%82"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.然后点击许可证密钥更新。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%BF%9B%E5%85%A5%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2"><span class="nav-number">1.1.7.</span> <span class="nav-text">7.进入如下界面.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E7%84%B6%E5%90%8E%E6%89%BE%E5%88%B0%E6%B3%A8%E5%86%8C%E6%9C%BA%E3%80%82"><span class="nav-number">1.1.8.</span> <span class="nav-text">8.然后找到注册机。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9A%E6%BF%80%E6%B4%BB"><span class="nav-number">1.2.</span> <span class="nav-text">二：激活</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%89%BE%E5%88%B0%E5%AE%89%E8%A3%85%E6%97%B6%E7%AC%AC%E4%B8%83%E6%AD%A5%E7%9A%84%E9%A1%B5%E9%9D%A2%EF%BC%8C%E7%84%B6%E5%90%8E%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84%E6%B3%A8%E5%86%8C%E6%9C%BA%E3%80%82"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.找到安装时第七步的页面，然后打开文件夹中的注册机。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%84%B6%E5%90%8E%E6%8A%8A%E6%B3%A8%E5%86%8C%E6%9C%BAlicense%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E7%84%B6%E5%90%8E%E7%B2%98%E8%B4%B4%E5%88%B0%E5%A6%82%E4%B8%8B%E9%A1%B5%E9%9D%A2%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E4%B8%AA%E3%80%82"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%80%89%E6%8B%A9%E6%89%8B%E5%8A%A8%E6%BF%80%E6%B4%BB%E3%80%82"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.选择手动激活。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8A%8A%E8%AF%B7%E6%B1%82%E5%A4%8D%E5%88%B6%E5%88%B0%E6%B3%A8%E5%86%8C%E6%9C%BA%E7%9A%84Activation-Request%E4%B8%AD%E3%80%82"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.把请求复制到注册机的Activation Request中。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%84%B6%E5%90%8E%E4%BC%9A%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Activation-Response-%E6%8A%8A%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E5%88%B0%E5%A6%82%E4%B8%8B%E5%8C%BA%E5%9F%9F-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5%E3%80%82"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E8%AF%81%E6%98%8E%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F%E4%BA%86%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%E4%BA%86%E3%80%82"><span class="nav-number">1.2.6.</span> <span class="nav-text">6.出现如下图证明注册成功了，就可以使用软件的所有功能了。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BurpSuite%E7%9A%84%E6%B5%81%E9%87%8F%E6%8A%93%E5%8F%96"><span class="nav-number">2.</span> <span class="nav-text">BurpSuite的流量抓取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%EF%BC%9A%E6%B5%81%E9%87%8F%E6%8A%93%E5%8F%96"><span class="nav-number">2.1.</span> <span class="nav-text">一：流量抓取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%89%BE%E5%88%B0Proxy%E4%B8%AD%E7%9A%84Options-%E6%9F%A5%E7%9C%8B%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3ip%E5%92%8C%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.找到Proxy中的Options,查看运行中的接口ip和端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%BE%E5%88%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%AE%BE%E7%BD%AE%EF%BC%8C%E6%89%BE%E5%88%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE%EF%BC%88%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8D%E5%90%8C-%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%9C%B0%E6%96%B9%E5%8F%AF%E8%83%BD%E4%B8%8D%E4%B8%80%E6%A0%B7%EF%BC%89%E6%8A%8A%E4%B8%8A%E9%9D%A2%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84IP%E5%92%8C%E7%AB%AF%E5%8F%A3%E5%8A%A0%E5%85%A5%E5%A6%82%E4%B8%8B%E5%9B%BE%E5%88%97%E8%A1%A8%E4%B8%AD"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8A%8A%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.把浏览器设置为代理服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%84%B6%E5%90%8E%E6%89%BE%E5%88%B0Proxy%E4%B8%AD%E7%9A%84intercept%E7%82%B9%E5%87%BB%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.然后找到Proxy中的intercept点击拦截请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%84%B6%E5%90%8E%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%E9%9A%8F%E4%BE%BF%E6%89%BE%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%EF%BC%8C%E4%BD%A0%E4%BC%9A%E5%8F%91%E7%8E%B0%E9%A1%B5%E9%9D%A2%E5%B9%B6%E6%B2%A1%E6%9C%89%E5%8A%A0%E8%BD%BD%EF%BC%8C%E8%80%8C%E6%98%AF%E8%A2%ABburpsuite%E6%8B%A6%E6%88%AA%E4%BA%86"><span class="nav-number">2.1.5.</span> <span class="nav-text">5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%EF%BC%8C%E7%82%B9%E5%87%BB%E5%8F%91%E9%80%81%EF%BC%8C%E4%B8%80%E7%9B%B4%E7%82%B9%E5%AE%8C%EF%BC%8C%E4%B9%9F%E5%B0%B1%E5%8A%A0%E8%BD%BD%E5%AE%8C%E9%A1%B5%E9%9D%A2%E4%BA%86%E3%80%82"><span class="nav-number">2.1.6.</span> <span class="nav-text">6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9A%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">二：证书配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8D%E8%BF%87%E5%9C%A8%E6%8A%93%E5%8F%96https%E9%A1%B5%E9%9D%A2%E6%97%B6%E4%BC%9A%E6%8F%90%E7%A4%BA%E6%9C%89%E9%A3%8E%E9%99%A9%EF%BC%8C%E8%BF%99%E6%97%B6%E5%80%99%E5%B0%B1%E9%9C%80%E8%A6%81%E5%8E%BB%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6%E4%BA%86%EF%BC%8C%E6%9D%A5%E6%B6%88%E5%8F%96%E8%AF%A5%E9%A3%8E%E9%99%A9%E3%80%82"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%82%B9%E5%87%BB%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9%E3%80%82"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.点击文件选择。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%9A%8F%E4%BE%BF%E8%B5%B7%E4%B8%AA%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%9D%E5%AD%98%E3%80%82"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.随便起个文件名保存。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%89%93%E5%BC%80%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%8C%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%89%BE%E5%88%B0%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE%EF%BC%8C%E7%82%B9%E5%87%BB%E5%8F%97%E4%BF%A1%E4%BB%BB%E7%9A%84%E6%A0%B9%E8%AF%81%E4%B9%A6%E9%A2%81%E5%8F%91%E6%9C%BA%E6%9E%84%EF%BC%8C%E7%82%B9%E5%87%BB%E5%AF%BC%E5%85%A5%E3%80%82"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%89%BE%E5%88%B0%E5%88%9A%E6%89%8D%E5%AF%BC%E5%87%BA%E7%9A%84DER%E6%A0%BC%E5%BC%8F%E7%9A%84%E8%AF%81%E4%B9%A6%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9%EF%BC%8C%E7%82%B9%E5%87%BB%E6%89%93%E5%BC%80"><span class="nav-number">2.2.5.</span> <span class="nav-text">5.找到刚才导出的DER格式的证书，然后选择，点击打开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%84%B6%E5%90%8E%E9%83%BD%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E5%B0%B1%E8%A1%8C"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.然后都默认下一步就行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%BF%99%E6%9D%A1%E5%B0%B1%E6%98%AF%E5%88%9A%E6%89%8D%E5%AF%BC%E5%85%A5%E6%88%90%E5%8A%9F%E7%9A%84%E8%AF%81%E4%B9%A6%E3%80%82"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.这条就是刚才导入成功的证书。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E7%84%B6%E5%90%8E%E5%9C%A8%E5%8E%BB%E8%AF%95%E7%9D%80%E6%8A%93%E5%8F%96%E4%B8%80%E4%B8%8B%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E4%BC%9A%E6%8F%90%E7%A4%BA%E6%9C%89%E9%A3%8E%E9%99%A9%E4%BA%86%E3%80%82"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.然后在去试着抓取一下就会发现页面不会提示有风险了。</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LEI GE"
+      src="/images/blog.png">
+  <p class="site-author-name" itemprop="name">LEI GE</p>
+  <div class="site-description" itemprop="description">记录点滴，稳扎基础</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lei-boss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lei-boss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_49371427" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_49371427" rel="noopener" target="_blank"><i class="sign-in fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://music.163.com/#/user/home?id=2054123966" title="网易云音乐 → https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;2054123966" rel="noopener" target="_blank">网易云音乐</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://lxywan.top/" title="http:&#x2F;&#x2F;lxywan.top" rel="noopener" target="_blank">博主个人网站</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://webkul.github.io/coolhue/" title="https:&#x2F;&#x2F;webkul.github.io&#x2F;coolhue&#x2F;" rel="noopener" target="_blank">Css渐变背景</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+
+
+      <!-- require APlayer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <!-- require MetingJS-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script> 
+  <!--网易云-->   
+    <div class="aplayer" 
+      data-id="7057466173" 
+      data-server="netease" 
+      data-type="playlist" 
+      data-fixed="true" 
+      data-autoplay="true" 
+      data-list-folded="true"
+      data-mutex="true"
+      data-order="random" 
+      data-loop="all"
+      data-volume="0.4" 
+      data-theme="#FADFA3" 
+      date-preload="auto" > 
+    </div>
+    
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://self-discipline.vip/2022/01/15/burpsuite-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blog.png">
+      <meta itemprop="name" content="LEI GE">
+      <meta itemprop="description" content="记录点滴，稳扎基础">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雷哥个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Burp Suite学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+
+          
+
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-15 20:01:09 / 修改时间：21:43:05" itemprop="dateCreated datePublished" datetime="2022-01-15T20:01:09+08:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/burpsuite/" itemprop="url" rel="index"><span itemprop="name">burpsuite</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Burpsuite是用java编写的，用于web安全审计和扫描，它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。<br>所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。<br>安全人员可以用它进行网络安全审计，开发人员也可以使用该工具进行网站压测与攻击测试。检测web应用程序的安全问题。<br><strong>注意：</strong>该工具是由java编写的，所以使用前需要先安装java环境。</p>
+<span id="more"></span>
+<hr>
+<h1 id="BurpSuite的安装与激活"><a href="#BurpSuite的安装与激活" class="headerlink" title="BurpSuite的安装与激活"></a>BurpSuite的安装与激活</h1><h2 id="一：安装"><a href="#一：安装" class="headerlink" title="一：安装"></a>一：安装</h2><h3 id="1：下载软件压缩包。"><a href="#1：下载软件压缩包。" class="headerlink" title="1：下载软件压缩包。"></a>1：下载软件压缩包。</h3><p>(链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA">https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA</a> 提取码：lxyb)</p>
+<h3 id="2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。"><a href="#2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。" class="headerlink" title="2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。"></a>2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。</h3><img src="/images/burpsuite/1.png" width="35%" height="35%" />
+
+<h3 id="3-点击下一个，不需要更改。"><a href="#3-点击下一个，不需要更改。" class="headerlink" title="3.点击下一个，不需要更改。"></a>3.点击下一个，不需要更改。</h3><img src="/images/burpsuite/2.png" width="35%" height="35%" />
+
+<h3 id="4-点击开始burp不需要更改。"><a href="#4-点击开始burp不需要更改。" class="headerlink" title="4.点击开始burp不需要更改。"></a>4.点击开始burp不需要更改。</h3><img src="/images/burpsuite/3.png" width="35%" height="35%" />
+
+<h3 id="5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。"><a href="#5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。" class="headerlink" title="5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。"></a>5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。</h3><img src="/images/burpsuite/4.png" width="35%" height="35%" />
+
+<h3 id="6-然后点击许可证密钥更新。"><a href="#6-然后点击许可证密钥更新。" class="headerlink" title="6.然后点击许可证密钥更新。"></a>6.然后点击许可证密钥更新。</h3><img src="/images/burpsuite/5.png" width="35%" height="35%" />
+
+<h3 id="7-进入如下界面"><a href="#7-进入如下界面" class="headerlink" title="7.进入如下界面."></a>7.进入如下界面.</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
+
+<h3 id="8-然后找到注册机。"><a href="#8-然后找到注册机。" class="headerlink" title="8.然后找到注册机。"></a>8.然后找到注册机。</h3><img src="/images/burpsuite/7.png" width="35%" height="35%" />
+
+<h2 id="二：激活"><a href="#二：激活" class="headerlink" title="二：激活"></a>二：激活</h2><h3 id="1-找到安装时第七步的页面，然后打开文件夹中的注册机。"><a href="#1-找到安装时第七步的页面，然后打开文件夹中的注册机。" class="headerlink" title="1.找到安装时第七步的页面，然后打开文件夹中的注册机。"></a>1.找到安装时第七步的页面，然后打开文件夹中的注册机。</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
+<img src="/images/burpsuite/8.png" width="35%" height="35%" />
+
+<h3 id="2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"><a href="#2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。" class="headerlink" title="2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"></a>2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。</h3><img src="/images/burpsuite/9.png" width="35%" height="35%" />
+
+<h3 id="3-选择手动激活。"><a href="#3-选择手动激活。" class="headerlink" title="3.选择手动激活。"></a>3.选择手动激活。</h3><img src="/images/burpsuite/10.png" width="35%" height="35%" />
+
+<h3 id="4-把请求复制到注册机的Activation-Request中。"><a href="#4-把请求复制到注册机的Activation-Request中。" class="headerlink" title="4.把请求复制到注册机的Activation Request中。"></a>4.把请求复制到注册机的Activation Request中。</h3><img src="/images/burpsuite/11.png" width="35%" height="35%" />
+
+<h3 id="5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。"><a href="#5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。" class="headerlink" title="5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。"></a>5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。</h3><img src="/images/burpsuite/12.png" width="35%" height="35%" />
+
+<h3 id="6-出现如下图证明注册成功了，就可以使用软件的所有功能了。"><a href="#6-出现如下图证明注册成功了，就可以使用软件的所有功能了。" class="headerlink" title="6.出现如下图证明注册成功了，就可以使用软件的所有功能了。"></a>6.出现如下图证明注册成功了，就可以使用软件的所有功能了。</h3><img src="/images/burpsuite/13.png" width="35%" height="35%" />
+
+<h1 id="BurpSuite的流量抓取"><a href="#BurpSuite的流量抓取" class="headerlink" title="BurpSuite的流量抓取"></a>BurpSuite的流量抓取</h1><h2 id="一：流量抓取"><a href="#一：流量抓取" class="headerlink" title="一：流量抓取"></a>一：流量抓取</h2><h3 id="1-找到Proxy中的Options-查看运行中的接口ip和端口"><a href="#1-找到Proxy中的Options-查看运行中的接口ip和端口" class="headerlink" title="1.找到Proxy中的Options,查看运行中的接口ip和端口"></a>1.找到Proxy中的Options,查看运行中的接口ip和端口</h3><img src="/images/burpsuite/burp-liuliang/1.png" width="35%" height="35%" />
+
+<h3 id="2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"><a href="#2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中" class="headerlink" title="2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"></a>2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中</h3><img src="/images/burpsuite/burp-liuliang/2.png" width="35%" height="35%" />
+
+<h3 id="3-把浏览器设置为代理服务器"><a href="#3-把浏览器设置为代理服务器" class="headerlink" title="3.把浏览器设置为代理服务器"></a>3.把浏览器设置为代理服务器</h3><img src="/images/burpsuite/burp-liuliang/3.png" width="35%" height="35%" />
+
+<h3 id="4-然后找到Proxy中的intercept点击拦截请求"><a href="#4-然后找到Proxy中的intercept点击拦截请求" class="headerlink" title="4.然后找到Proxy中的intercept点击拦截请求"></a>4.然后找到Proxy中的intercept点击拦截请求</h3><img src="/images/burpsuite/burp-liuliang/4.png" width="35%" height="35%" />
+
+<h3 id="5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了"><a href="#5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了" class="headerlink" title="5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了."></a>5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了.</h3><img src="/images/burpsuite/burp-liuliang/5.png" width="35%" height="35%" />
+
+<h3 id="6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。"><a href="#6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。" class="headerlink" title="6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。"></a>6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。</h3><h2 id="二：证书配置"><a href="#二：证书配置" class="headerlink" title="二：证书配置"></a>二：证书配置</h2><h3 id="1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"><a href="#1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。" class="headerlink" title="1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"></a>1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。</h3><ul>
+<li>找到Proxy中的Options</li>
+<li>点击代理监听器下的<strong>导入/导出CA证书按钮</strong></li>
+<li>出口选择<strong>DER格式的证书</strong></li>
+<li>点击下一步</li>
+</ul>
+<img src="/images/burpsuite/burp-liuliang/6.png" width="35%" height="35%" />
+
+<h3 id="2-点击文件选择。"><a href="#2-点击文件选择。" class="headerlink" title="2.点击文件选择。"></a>2.点击文件选择。</h3><img src="/images/burpsuite/burp-liuliang/7.png" width="35%" height="35%" />
+
+<h3 id="3-随便起个文件名保存。"><a href="#3-随便起个文件名保存。" class="headerlink" title="3.随便起个文件名保存。"></a>3.随便起个文件名保存。</h3><img src="/images/burpsuite/burp-liuliang/8.png" width="35%" height="35%" />
+
+<h3 id="4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"><a href="#4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。" class="headerlink" title="4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"></a>4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。</h3><img src="/images/burpsuite/burp-liuliang/9.png" width="35%" height="35%" />
+
+<h3 id="5-找到刚才导出的DER格式的证书，然后选择，点击打开"><a href="#5-找到刚才导出的DER格式的证书，然后选择，点击打开" class="headerlink" title="5.找到刚才导出的DER格式的证书，然后选择，点击打开"></a>5.找到刚才导出的DER格式的证书，然后选择，点击打开</h3><img src="/images/burpsuite/burp-liuliang/10.png" width="35%" height="35%" />
+
+<h3 id="6-然后都默认下一步就行"><a href="#6-然后都默认下一步就行" class="headerlink" title="6.然后都默认下一步就行"></a>6.然后都默认下一步就行</h3><img src="/images/burpsuite/burp-liuliang/11.png" width="35%" height="35%" />
+
+<h3 id="7-这条就是刚才导入成功的证书。"><a href="#7-这条就是刚才导入成功的证书。" class="headerlink" title="7.这条就是刚才导入成功的证书。"></a>7.这条就是刚才导入成功的证书。</h3><img src="/images/burpsuite/burp-liuliang/12.png" width="35%" height="35%" />
+
+<h3 id="8-然后在去试着抓取一下就会发现页面不会提示有风险了。"><a href="#8-然后在去试着抓取一下就会发现页面不会提示有风险了。" class="headerlink" title="8.然后在去试着抓取一下就会发现页面不会提示有风险了。"></a>8.然后在去试着抓取一下就会发现页面不会提示有风险了。</h3>
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文已结束<i class="fa fa-hourglass-end"></i>非常感谢您的阅读,biu、biu、biu-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>喜欢我就把文章分享给朋友吧,由于个人收款码的监管所以你的分享就是对我最大的支持，爱你哟！！！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>LEI GE
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://self-discipline.vip/2022/01/15/burpsuite-01/" title="Burp Suite学习笔记">https://self-discipline.vip/2022/01/15/burpsuite-01/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/burpsuite/" rel="tag"><i class="fa fa-tag"></i> burpsuite</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/14/java-day01/" rel="prev" title="java-day01">
+                  <i class="fa fa-chevron-left"></i> java-day01
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NTE5OC8zMTY2NQ=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LEI GE</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("01/12/2022 00:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="本站已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script><script color="0,0,255" opacity="0.7" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/third-party/comments/livere.js"></script>
+
+</body>
+</html>

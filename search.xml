@@ -1,20 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博主说明</title>
-    <url>/2022/01/12/hello-world/</url>
-    <content><![CDATA[<ul>
-<li>博主介绍：</li>
-<li>码畜一枚,搭建此博客意在记录个人学习的笔记.</li>
-<li>文档中分享的文件均从本人百度网盘分享，如果担心软件被安装后门，可以到下面这个链接中去检测</li>
-<li><strong>（<a href="https://www.virustotal.com/gui/home/upload%EF%BC%89">https://www.virustotal.com/gui/home/upload）</a></strong><span id="more"></span></li>
+    <title>Burp Suite学习笔记</title>
+    <url>/2022/01/15/burpsuite-01/</url>
+    <content><![CDATA[<p>Burpsuite是用java编写的，用于web安全审计和扫描，它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。<br>所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。<br>安全人员可以用它进行网络安全审计，开发人员也可以使用该工具进行网站压测与攻击测试。检测web应用程序的安全问题。<br><strong>注意：</strong>该工具是由java编写的，所以使用前需要先安装java环境。</p>
+<span id="more"></span>
+<hr>
+<h1 id="BurpSuite的安装与激活"><a href="#BurpSuite的安装与激活" class="headerlink" title="BurpSuite的安装与激活"></a>BurpSuite的安装与激活</h1><h2 id="一：安装"><a href="#一：安装" class="headerlink" title="一：安装"></a>一：安装</h2><h3 id="1：下载软件压缩包。"><a href="#1：下载软件压缩包。" class="headerlink" title="1：下载软件压缩包。"></a>1：下载软件压缩包。</h3><p>(链接：<a href="https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA">https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA</a> 提取码：lxyb)</p>
+<h3 id="2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。"><a href="#2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。" class="headerlink" title="2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。"></a>2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。</h3><img src="/images/burpsuite/1.png" width="35%" height="35%" />
+
+<h3 id="3-点击下一个，不需要更改。"><a href="#3-点击下一个，不需要更改。" class="headerlink" title="3.点击下一个，不需要更改。"></a>3.点击下一个，不需要更改。</h3><img src="/images/burpsuite/2.png" width="35%" height="35%" />
+
+<h3 id="4-点击开始burp不需要更改。"><a href="#4-点击开始burp不需要更改。" class="headerlink" title="4.点击开始burp不需要更改。"></a>4.点击开始burp不需要更改。</h3><img src="/images/burpsuite/3.png" width="35%" height="35%" />
+
+<h3 id="5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。"><a href="#5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。" class="headerlink" title="5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。"></a>5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。</h3><img src="/images/burpsuite/4.png" width="35%" height="35%" />
+
+<h3 id="6-然后点击许可证密钥更新。"><a href="#6-然后点击许可证密钥更新。" class="headerlink" title="6.然后点击许可证密钥更新。"></a>6.然后点击许可证密钥更新。</h3><img src="/images/burpsuite/5.png" width="35%" height="35%" />
+
+<h3 id="7-进入如下界面"><a href="#7-进入如下界面" class="headerlink" title="7.进入如下界面."></a>7.进入如下界面.</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
+
+<h3 id="8-然后找到注册机。"><a href="#8-然后找到注册机。" class="headerlink" title="8.然后找到注册机。"></a>8.然后找到注册机。</h3><img src="/images/burpsuite/7.png" width="35%" height="35%" />
+
+<h2 id="二：激活"><a href="#二：激活" class="headerlink" title="二：激活"></a>二：激活</h2><h3 id="1-找到安装时第七步的页面，然后打开文件夹中的注册机。"><a href="#1-找到安装时第七步的页面，然后打开文件夹中的注册机。" class="headerlink" title="1.找到安装时第七步的页面，然后打开文件夹中的注册机。"></a>1.找到安装时第七步的页面，然后打开文件夹中的注册机。</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
+<img src="/images/burpsuite/8.png" width="35%" height="35%" />
+
+<h3 id="2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"><a href="#2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。" class="headerlink" title="2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"></a>2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。</h3><img src="/images/burpsuite/9.png" width="35%" height="35%" />
+
+<h3 id="3-选择手动激活。"><a href="#3-选择手动激活。" class="headerlink" title="3.选择手动激活。"></a>3.选择手动激活。</h3><img src="/images/burpsuite/10.png" width="35%" height="35%" />
+
+<h3 id="4-把请求复制到注册机的Activation-Request中。"><a href="#4-把请求复制到注册机的Activation-Request中。" class="headerlink" title="4.把请求复制到注册机的Activation Request中。"></a>4.把请求复制到注册机的Activation Request中。</h3><img src="/images/burpsuite/11.png" width="35%" height="35%" />
+
+<h3 id="5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。"><a href="#5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。" class="headerlink" title="5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。"></a>5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。</h3><img src="/images/burpsuite/12.png" width="35%" height="35%" />
+
+<h3 id="6-出现如下图证明注册成功了，就可以使用软件的所有功能了。"><a href="#6-出现如下图证明注册成功了，就可以使用软件的所有功能了。" class="headerlink" title="6.出现如下图证明注册成功了，就可以使用软件的所有功能了。"></a>6.出现如下图证明注册成功了，就可以使用软件的所有功能了。</h3><img src="/images/burpsuite/13.png" width="35%" height="35%" />
+
+<h1 id="BurpSuite的流量抓取"><a href="#BurpSuite的流量抓取" class="headerlink" title="BurpSuite的流量抓取"></a>BurpSuite的流量抓取</h1><h2 id="一：流量抓取"><a href="#一：流量抓取" class="headerlink" title="一：流量抓取"></a>一：流量抓取</h2><h3 id="1-找到Proxy中的Options-查看运行中的接口ip和端口"><a href="#1-找到Proxy中的Options-查看运行中的接口ip和端口" class="headerlink" title="1.找到Proxy中的Options,查看运行中的接口ip和端口"></a>1.找到Proxy中的Options,查看运行中的接口ip和端口</h3><img src="/images/burpsuite/burp-liuliang/1.png" width="35%" height="35%" />
+
+<h3 id="2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"><a href="#2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中" class="headerlink" title="2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"></a>2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中</h3><img src="/images/burpsuite/burp-liuliang/2.png" width="35%" height="35%" />
+
+<h3 id="3-把浏览器设置为代理服务器"><a href="#3-把浏览器设置为代理服务器" class="headerlink" title="3.把浏览器设置为代理服务器"></a>3.把浏览器设置为代理服务器</h3><img src="/images/burpsuite/burp-liuliang/3.png" width="35%" height="35%" />
+
+<h3 id="4-然后找到Proxy中的intercept点击拦截请求"><a href="#4-然后找到Proxy中的intercept点击拦截请求" class="headerlink" title="4.然后找到Proxy中的intercept点击拦截请求"></a>4.然后找到Proxy中的intercept点击拦截请求</h3><img src="/images/burpsuite/burp-liuliang/4.png" width="35%" height="35%" />
+
+<h3 id="5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了"><a href="#5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了" class="headerlink" title="5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了."></a>5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了.</h3><img src="/images/burpsuite/burp-liuliang/5.png" width="35%" height="35%" />
+
+<h3 id="6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。"><a href="#6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。" class="headerlink" title="6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。"></a>6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。</h3><h2 id="二：证书配置"><a href="#二：证书配置" class="headerlink" title="二：证书配置"></a>二：证书配置</h2><h3 id="1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"><a href="#1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。" class="headerlink" title="1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"></a>1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。</h3><ul>
+<li>找到Proxy中的Options</li>
+<li>点击代理监听器下的<strong>导入/导出CA证书按钮</strong></li>
+<li>出口选择<strong>DER格式的证书</strong></li>
+<li>点击下一步</li>
 </ul>
-]]></content>
+<img src="/images/burpsuite/burp-liuliang/6.png" width="35%" height="35%" />
+
+<h3 id="2-点击文件选择。"><a href="#2-点击文件选择。" class="headerlink" title="2.点击文件选择。"></a>2.点击文件选择。</h3><img src="/images/burpsuite/burp-liuliang/7.png" width="35%" height="35%" />
+
+<h3 id="3-随便起个文件名保存。"><a href="#3-随便起个文件名保存。" class="headerlink" title="3.随便起个文件名保存。"></a>3.随便起个文件名保存。</h3><img src="/images/burpsuite/burp-liuliang/8.png" width="35%" height="35%" />
+
+<h3 id="4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"><a href="#4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。" class="headerlink" title="4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"></a>4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。</h3><img src="/images/burpsuite/burp-liuliang/9.png" width="35%" height="35%" />
+
+<h3 id="5-找到刚才导出的DER格式的证书，然后选择，点击打开"><a href="#5-找到刚才导出的DER格式的证书，然后选择，点击打开" class="headerlink" title="5.找到刚才导出的DER格式的证书，然后选择，点击打开"></a>5.找到刚才导出的DER格式的证书，然后选择，点击打开</h3><img src="/images/burpsuite/burp-liuliang/10.png" width="35%" height="35%" />
+
+<h3 id="6-然后都默认下一步就行"><a href="#6-然后都默认下一步就行" class="headerlink" title="6.然后都默认下一步就行"></a>6.然后都默认下一步就行</h3><img src="/images/burpsuite/burp-liuliang/11.png" width="35%" height="35%" />
+
+<h3 id="7-这条就是刚才导入成功的证书。"><a href="#7-这条就是刚才导入成功的证书。" class="headerlink" title="7.这条就是刚才导入成功的证书。"></a>7.这条就是刚才导入成功的证书。</h3><img src="/images/burpsuite/burp-liuliang/12.png" width="35%" height="35%" />
+
+<h3 id="8-然后在去试着抓取一下就会发现页面不会提示有风险了。"><a href="#8-然后在去试着抓取一下就会发现页面不会提示有风险了。" class="headerlink" title="8.然后在去试着抓取一下就会发现页面不会提示有风险了。"></a>8.然后在去试着抓取一下就会发现页面不会提示有风险了。</h3>]]></content>
       <categories>
-        <category>个人</category>
+        <category>burpsuite</category>
       </categories>
       <tags>
-        <tag>个人</tag>
+        <tag>burpsuite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文章一（各种格式的示例学习）</title>
+    <url>/2022/01/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E9%81%8D%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="雷哥文章一"><a href="#雷哥文章一" class="headerlink" title="雷哥文章一"></a>雷哥文章一</h1><span id="more"></span>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
+<li>列表一</li>
+<li>列表二<br>  a 子列表一</li>
+<li>列表三<br>  a 子列表一<br>  b 子列表二<br><a href="http://www.baidu.com/">百度</a><br><img src="https://addimagesaddress-1308114002.cos.ap-beijing.myqcloud.com/1638439047317.png" alt="图片"><br>虚线分割用三个-</li>
+</ul>
+<hr>
+<p>斜体：<em>一个星号斜体</em><br>加粗：<strong>两个星号加粗</strong></p>
+<p>引用代码单行用一个：<code>&lt;html&gt;&lt;/html&gt;</code><br>引用代码多行用三个</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;俺是标题&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;h1&gt;掉毛&lt;/h1&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -71,23 +146,20 @@
       </tags>
   </entry>
   <entry>
-    <title>文章一（各种格式的示例学习）</title>
-    <url>/2022/01/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E9%81%8D%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="雷哥文章一"><a href="#雷哥文章一" class="headerlink" title="雷哥文章一"></a>雷哥文章一</h1><span id="more"></span>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
-<li>列表一</li>
-<li>列表二<br>  a 子列表一</li>
-<li>列表三<br>  a 子列表一<br>  b 子列表二<br><a href="http://www.baidu.com/">百度</a><br><img src="https://addimagesaddress-1308114002.cos.ap-beijing.myqcloud.com/1638439047317.png" alt="图片"><br>虚线分割用三个-</li>
+    <title>博主说明</title>
+    <url>/2022/01/12/hello-world/</url>
+    <content><![CDATA[<ul>
+<li>博主介绍：</li>
+<li>码畜一枚,搭建此博客意在记录个人学习的笔记.</li>
+<li>文档中分享的文件均从本人百度网盘分享，如果担心软件被安装后门，可以到下面这个链接中去检测</li>
+<li><strong>（<a href="https://www.virustotal.com/gui/home/upload%EF%BC%89">https://www.virustotal.com/gui/home/upload）</a></strong><span id="more"></span></li>
 </ul>
-<hr>
-<p>斜体：<em>一个星号斜体</em><br>加粗：<strong>两个星号加粗</strong></p>
-<p>引用代码单行用一个：<code>&lt;html&gt;&lt;/html&gt;</code><br>引用代码多行用三个</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;俺是标题&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;h1&gt;掉毛&lt;/h1&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <categories>
-        <category>前端</category>
+        <category>个人</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>个人</tag>
       </tags>
   </entry>
 </search>
