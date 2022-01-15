@@ -175,7 +175,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -215,6 +215,7 @@
 
         </div>
       </div>
+
 
       <!-- require APlayer -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
@@ -323,7 +324,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/01/12/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
+            <span itemprop="name">博主说明</span>
           </a>
       </div>
 
@@ -345,6 +346,7 @@
     <div class="footer-inner">
 
 
+
 <div class="copyright">
   &copy; 
   <span itemprop="copyrightYear">2022</span>
@@ -358,13 +360,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -384,7 +386,35 @@
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
-</div><script color="0,0,255" opacity="0.7" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+</div>
+
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("01/12/2022 00:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="本站已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script><script color="0,0,255" opacity="0.7" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
     </div>
