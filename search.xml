@@ -24,42 +24,42 @@
 <span id="more"></span>
 <hr>
 <h1 id="BurpSuite的安装与激活"><a href="#BurpSuite的安装与激活" class="headerlink" title="BurpSuite的安装与激活"></a>BurpSuite的安装与激活</h1><h2 id="一：安装"><a href="#一：安装" class="headerlink" title="一：安装"></a>一：安装</h2><h3 id="1：下载软件压缩包。"><a href="#1：下载软件压缩包。" class="headerlink" title="1：下载软件压缩包。"></a>1：下载软件压缩包。</h3><p>(链接：<a href="https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA">https://pan.baidu.com/s/10gSi17vH_wgeRj8170y_NA</a> 提取码：lxyb)</p>
-<h3 id="2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。"><a href="#2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。" class="headerlink" title="2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。"></a>2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。</h3><img src="/images/burpsuite/1.png" width="35%" height="35%" />
+<h3 id="2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。"><a href="#2：解压压缩包-然后进去文件夹中-找到如下两个文件-CN的是中文版-EN的是英文版-可以自行选择一款双击运行。" class="headerlink" title="2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。"></a>2：解压压缩包,然后进去文件夹中,找到如下两个文件,CN的是中文版,EN的是英文版,可以自行选择一款双击运行。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/1.png" width="35%" height="35%" />
 
-<h3 id="3-点击下一个，不需要更改。"><a href="#3-点击下一个，不需要更改。" class="headerlink" title="3.点击下一个，不需要更改。"></a>3.点击下一个，不需要更改。</h3><img src="/images/burpsuite/2.png" width="35%" height="35%" />
+<h3 id="3-点击下一个，不需要更改。"><a href="#3-点击下一个，不需要更改。" class="headerlink" title="3.点击下一个，不需要更改。"></a>3.点击下一个，不需要更改。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/2.png" width="35%" height="35%" />
 
-<h3 id="4-点击开始burp不需要更改。"><a href="#4-点击开始burp不需要更改。" class="headerlink" title="4.点击开始burp不需要更改。"></a>4.点击开始burp不需要更改。</h3><img src="/images/burpsuite/3.png" width="35%" height="35%" />
+<h3 id="4-点击开始burp不需要更改。"><a href="#4-点击开始burp不需要更改。" class="headerlink" title="4.点击开始burp不需要更改。"></a>4.点击开始burp不需要更改。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/3.png" width="35%" height="35%" />
 
-<h3 id="5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。"><a href="#5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。" class="headerlink" title="5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。"></a>5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。</h3><img src="/images/burpsuite/4.png" width="35%" height="35%" />
+<h3 id="5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。"><a href="#5-由于第一次进入可能需要注册-找到帮助窗口下的许可证点击。" class="headerlink" title="5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。"></a>5.由于第一次进入可能需要注册,找到帮助窗口下的许可证点击。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/4.png" width="35%" height="35%" />
 
-<h3 id="6-然后点击许可证密钥更新。"><a href="#6-然后点击许可证密钥更新。" class="headerlink" title="6.然后点击许可证密钥更新。"></a>6.然后点击许可证密钥更新。</h3><img src="/images/burpsuite/5.png" width="35%" height="35%" />
+<h3 id="6-然后点击许可证密钥更新。"><a href="#6-然后点击许可证密钥更新。" class="headerlink" title="6.然后点击许可证密钥更新。"></a>6.然后点击许可证密钥更新。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/5.png" width="35%" height="35%" />
 
-<h3 id="7-进入如下界面"><a href="#7-进入如下界面" class="headerlink" title="7.进入如下界面."></a>7.进入如下界面.</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
+<h3 id="7-进入如下界面"><a href="#7-进入如下界面" class="headerlink" title="7.进入如下界面."></a>7.进入如下界面.</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/6.png" width="35%" height="35%" />
 
-<h3 id="8-然后找到注册机。"><a href="#8-然后找到注册机。" class="headerlink" title="8.然后找到注册机。"></a>8.然后找到注册机。</h3><img src="/images/burpsuite/7.png" width="35%" height="35%" />
+<h3 id="8-然后找到注册机。"><a href="#8-然后找到注册机。" class="headerlink" title="8.然后找到注册机。"></a>8.然后找到注册机。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/7.png" width="35%" height="35%" />
 
-<h2 id="二：激活"><a href="#二：激活" class="headerlink" title="二：激活"></a>二：激活</h2><h3 id="1-找到安装时第七步的页面，然后打开文件夹中的注册机。"><a href="#1-找到安装时第七步的页面，然后打开文件夹中的注册机。" class="headerlink" title="1.找到安装时第七步的页面，然后打开文件夹中的注册机。"></a>1.找到安装时第七步的页面，然后打开文件夹中的注册机。</h3><img src="/images/burpsuite/6.png" width="35%" height="35%" />
-<img src="/images/burpsuite/8.png" width="35%" height="35%" />
+<h2 id="二：激活"><a href="#二：激活" class="headerlink" title="二：激活"></a>二：激活</h2><h3 id="1-找到安装时第七步的页面，然后打开文件夹中的注册机。"><a href="#1-找到安装时第七步的页面，然后打开文件夹中的注册机。" class="headerlink" title="1.找到安装时第七步的页面，然后打开文件夹中的注册机。"></a>1.找到安装时第七步的页面，然后打开文件夹中的注册机。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/6.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/8.png" width="35%" height="35%" />
 
-<h3 id="2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"><a href="#2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。" class="headerlink" title="2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"></a>2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。</h3><img src="/images/burpsuite/9.png" width="35%" height="35%" />
+<h3 id="2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"><a href="#2-然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。" class="headerlink" title="2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。"></a>2.然后把注册机license中的所有内容复制然后粘贴到如下页面，然后点击下一个。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/9.png" width="35%" height="35%" />
 
-<h3 id="3-选择手动激活。"><a href="#3-选择手动激活。" class="headerlink" title="3.选择手动激活。"></a>3.选择手动激活。</h3><img src="/images/burpsuite/10.png" width="35%" height="35%" />
+<h3 id="3-选择手动激活。"><a href="#3-选择手动激活。" class="headerlink" title="3.选择手动激活。"></a>3.选择手动激活。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/10.png" width="35%" height="35%" />
 
-<h3 id="4-把请求复制到注册机的Activation-Request中。"><a href="#4-把请求复制到注册机的Activation-Request中。" class="headerlink" title="4.把请求复制到注册机的Activation Request中。"></a>4.把请求复制到注册机的Activation Request中。</h3><img src="/images/burpsuite/11.png" width="35%" height="35%" />
+<h3 id="4-把请求复制到注册机的Activation-Request中。"><a href="#4-把请求复制到注册机的Activation-Request中。" class="headerlink" title="4.把请求复制到注册机的Activation Request中。"></a>4.把请求复制到注册机的Activation Request中。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/11.png" width="35%" height="35%" />
 
-<h3 id="5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。"><a href="#5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。" class="headerlink" title="5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。"></a>5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。</h3><img src="/images/burpsuite/12.png" width="35%" height="35%" />
+<h3 id="5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。"><a href="#5-然后会自动生成Activation-Response-把自动生成的内容复制粘贴到如下区域-然后点击下一步。" class="headerlink" title="5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。"></a>5.然后会自动生成Activation Response,把自动生成的内容复制粘贴到如下区域,然后点击下一步。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/12.png" width="35%" height="35%" />
 
-<h3 id="6-出现如下图证明注册成功了，就可以使用软件的所有功能了。"><a href="#6-出现如下图证明注册成功了，就可以使用软件的所有功能了。" class="headerlink" title="6.出现如下图证明注册成功了，就可以使用软件的所有功能了。"></a>6.出现如下图证明注册成功了，就可以使用软件的所有功能了。</h3><img src="/images/burpsuite/13.png" width="35%" height="35%" />
+<h3 id="6-出现如下图证明注册成功了，就可以使用软件的所有功能了。"><a href="#6-出现如下图证明注册成功了，就可以使用软件的所有功能了。" class="headerlink" title="6.出现如下图证明注册成功了，就可以使用软件的所有功能了。"></a>6.出现如下图证明注册成功了，就可以使用软件的所有功能了。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/13.png" width="35%" height="35%" />
 
-<h1 id="BurpSuite的流量抓取"><a href="#BurpSuite的流量抓取" class="headerlink" title="BurpSuite的流量抓取"></a>BurpSuite的流量抓取</h1><h2 id="一：流量抓取"><a href="#一：流量抓取" class="headerlink" title="一：流量抓取"></a>一：流量抓取</h2><h3 id="1-找到Proxy中的Options-查看运行中的接口ip和端口"><a href="#1-找到Proxy中的Options-查看运行中的接口ip和端口" class="headerlink" title="1.找到Proxy中的Options,查看运行中的接口ip和端口"></a>1.找到Proxy中的Options,查看运行中的接口ip和端口</h3><img src="/images/burpsuite/burp-liuliang/1.png" width="35%" height="35%" />
+<h1 id="BurpSuite的流量抓取"><a href="#BurpSuite的流量抓取" class="headerlink" title="BurpSuite的流量抓取"></a>BurpSuite的流量抓取</h1><h2 id="一：流量抓取"><a href="#一：流量抓取" class="headerlink" title="一：流量抓取"></a>一：流量抓取</h2><h3 id="1-找到Proxy中的Options-查看运行中的接口ip和端口"><a href="#1-找到Proxy中的Options-查看运行中的接口ip和端口" class="headerlink" title="1.找到Proxy中的Options,查看运行中的接口ip和端口"></a>1.找到Proxy中的Options,查看运行中的接口ip和端口</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/1.png" width="35%" height="35%" />
 
-<h3 id="2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"><a href="#2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中" class="headerlink" title="2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"></a>2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中</h3><img src="/images/burpsuite/burp-liuliang/2.png" width="35%" height="35%" />
+<h3 id="2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"><a href="#2-找到浏览器的设置，找到代理设置（浏览器不同-设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中" class="headerlink" title="2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中"></a>2.找到浏览器的设置，找到代理设置（浏览器不同,设置的地方可能不一样）把上面运行中的IP和端口加入如下图列表中</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/2.png" width="35%" height="35%" />
 
-<h3 id="3-把浏览器设置为代理服务器"><a href="#3-把浏览器设置为代理服务器" class="headerlink" title="3.把浏览器设置为代理服务器"></a>3.把浏览器设置为代理服务器</h3><img src="/images/burpsuite/burp-liuliang/3.png" width="35%" height="35%" />
+<h3 id="3-把浏览器设置为代理服务器"><a href="#3-把浏览器设置为代理服务器" class="headerlink" title="3.把浏览器设置为代理服务器"></a>3.把浏览器设置为代理服务器</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/3.png" width="35%" height="35%" />
 
-<h3 id="4-然后找到Proxy中的intercept点击拦截请求"><a href="#4-然后找到Proxy中的intercept点击拦截请求" class="headerlink" title="4.然后找到Proxy中的intercept点击拦截请求"></a>4.然后找到Proxy中的intercept点击拦截请求</h3><img src="/images/burpsuite/burp-liuliang/4.png" width="35%" height="35%" />
+<h3 id="4-然后找到Proxy中的intercept点击拦截请求"><a href="#4-然后找到Proxy中的intercept点击拦截请求" class="headerlink" title="4.然后找到Proxy中的intercept点击拦截请求"></a>4.然后找到Proxy中的intercept点击拦截请求</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/4.png" width="35%" height="35%" />
 
-<h3 id="5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了"><a href="#5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了" class="headerlink" title="5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了."></a>5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了.</h3><img src="/images/burpsuite/burp-liuliang/5.png" width="35%" height="35%" />
+<h3 id="5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了"><a href="#5-然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了" class="headerlink" title="5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了."></a>5.然后打开浏览器随便找个页面刷新，你会发现页面并没有加载，而是被burpsuite拦截了.</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/5.png" width="35%" height="35%" />
 
 <h3 id="6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。"><a href="#6-如果需要加载页面，点击发送，一直点完，也就加载完页面了。" class="headerlink" title="6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。"></a>6.如果需要加载页面，点击发送，一直点完，也就加载完页面了。</h3><h2 id="二：证书配置"><a href="#二：证书配置" class="headerlink" title="二：证书配置"></a>二：证书配置</h2><h3 id="1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"><a href="#1-不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。" class="headerlink" title="1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。"></a>1.不过在抓取https页面时会提示有风险，这时候就需要去配置证书了，来消取该风险。</h3><ul>
 <li>找到Proxy中的Options</li>
@@ -67,19 +67,19 @@
 <li>出口选择<strong>DER格式的证书</strong></li>
 <li>点击下一步</li>
 </ul>
-<img src="/images/burpsuite/burp-liuliang/6.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/6.png" width="35%" height="35%" />
 
-<h3 id="2-点击文件选择。"><a href="#2-点击文件选择。" class="headerlink" title="2.点击文件选择。"></a>2.点击文件选择。</h3><img src="/images/burpsuite/burp-liuliang/7.png" width="35%" height="35%" />
+<h3 id="2-点击文件选择。"><a href="#2-点击文件选择。" class="headerlink" title="2.点击文件选择。"></a>2.点击文件选择。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/7.png" width="35%" height="35%" />
 
-<h3 id="3-随便起个文件名保存。"><a href="#3-随便起个文件名保存。" class="headerlink" title="3.随便起个文件名保存。"></a>3.随便起个文件名保存。</h3><img src="/images/burpsuite/burp-liuliang/8.png" width="35%" height="35%" />
+<h3 id="3-随便起个文件名保存。"><a href="#3-随便起个文件名保存。" class="headerlink" title="3.随便起个文件名保存。"></a>3.随便起个文件名保存。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/8.png" width="35%" height="35%" />
 
-<h3 id="4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"><a href="#4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。" class="headerlink" title="4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"></a>4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。</h3><img src="/images/burpsuite/burp-liuliang/9.png" width="35%" height="35%" />
+<h3 id="4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"><a href="#4-打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。" class="headerlink" title="4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。"></a>4.打开浏览器，设置中找到证书配置，点击受信任的根证书颁发机构，点击导入。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/9.png" width="35%" height="35%" />
 
-<h3 id="5-找到刚才导出的DER格式的证书，然后选择，点击打开"><a href="#5-找到刚才导出的DER格式的证书，然后选择，点击打开" class="headerlink" title="5.找到刚才导出的DER格式的证书，然后选择，点击打开"></a>5.找到刚才导出的DER格式的证书，然后选择，点击打开</h3><img src="/images/burpsuite/burp-liuliang/10.png" width="35%" height="35%" />
+<h3 id="5-找到刚才导出的DER格式的证书，然后选择，点击打开"><a href="#5-找到刚才导出的DER格式的证书，然后选择，点击打开" class="headerlink" title="5.找到刚才导出的DER格式的证书，然后选择，点击打开"></a>5.找到刚才导出的DER格式的证书，然后选择，点击打开</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/10.png" width="35%" height="35%" />
 
-<h3 id="6-然后都默认下一步就行"><a href="#6-然后都默认下一步就行" class="headerlink" title="6.然后都默认下一步就行"></a>6.然后都默认下一步就行</h3><img src="/images/burpsuite/burp-liuliang/11.png" width="35%" height="35%" />
+<h3 id="6-然后都默认下一步就行"><a href="#6-然后都默认下一步就行" class="headerlink" title="6.然后都默认下一步就行"></a>6.然后都默认下一步就行</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/11.png" width="35%" height="35%" />
 
-<h3 id="7-这条就是刚才导入成功的证书。"><a href="#7-这条就是刚才导入成功的证书。" class="headerlink" title="7.这条就是刚才导入成功的证书。"></a>7.这条就是刚才导入成功的证书。</h3><img src="/images/burpsuite/burp-liuliang/12.png" width="35%" height="35%" />
+<h3 id="7-这条就是刚才导入成功的证书。"><a href="#7-这条就是刚才导入成功的证书。" class="headerlink" title="7.这条就是刚才导入成功的证书。"></a>7.这条就是刚才导入成功的证书。</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/burpsuite/burp-liuliang/12.png" width="35%" height="35%" />
 
 <h3 id="8-然后在去试着抓取一下就会发现页面不会提示有风险了。"><a href="#8-然后在去试着抓取一下就会发现页面不会提示有风险了。" class="headerlink" title="8.然后在去试着抓取一下就会发现页面不会提示有风险了。"></a>8.然后在去试着抓取一下就会发现页面不会提示有风险了。</h3>]]></content>
       <categories>
@@ -95,19 +95,19 @@
     <content><![CDATA[<p>这是关于java环境变量安装的一些步骤</p>
 <span id="more"></span>
 <h1 id="jdk在windows和linux中的安装步骤"><a href="#jdk在windows和linux中的安装步骤" class="headerlink" title="jdk在windows和linux中的安装步骤"></a>jdk在windows和linux中的安装步骤</h1><h2 id="一：Windows"><a href="#一：Windows" class="headerlink" title="一：Windows"></a>一：Windows</h2><h3 id="1-jdk安装包"><a href="#1-jdk安装包" class="headerlink" title="1.jdk安装包"></a>1.jdk安装包</h3><p>(链接：<a href="https://pan.baidu.com/s/17BamvwOmnVrJiWeQloD0cw">https://pan.baidu.com/s/17BamvwOmnVrJiWeQloD0cw</a> 提取码：lxy1)</p>
-<h3 id="2-打开安装包，除了安装路径以外其他的可以默认下一步。"><a href="#2-打开安装包，除了安装路径以外其他的可以默认下一步。" class="headerlink" title="2.打开安装包，除了安装路径以外其他的可以默认下一步。"></a>2.打开安装包，除了安装路径以外其他的可以默认下一步。</h3><h3 id="3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："><a href="#3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：" class="headerlink" title="3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："></a>3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：</h3><img src="https://whatisyourname.oss-cn-beijing.aliyuncs.com/java-images/java-jdk.png?Expires=1642307186&OSSAccessKeyId=TMP.3KguG7yu3DNsbwyR7WSY4rkCbzh27bab5TyPdrJDJBw6MUSQLRwwRKSyZiZ2fRW8x3W4Hh3EC1ekAGMZCPx6ykCgWgJ2Dp&Signature=kvJAlAM7AxuHTpJVv7AJ4Mccqzk%3D" width="35%" height="35%" />
+<h3 id="2-打开安装包，除了安装路径以外其他的可以默认下一步。"><a href="#2-打开安装包，除了安装路径以外其他的可以默认下一步。" class="headerlink" title="2.打开安装包，除了安装路径以外其他的可以默认下一步。"></a>2.打开安装包，除了安装路径以外其他的可以默认下一步。</h3><h3 id="3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："><a href="#3-找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：" class="headerlink" title="3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性："></a>3.找到桌面（此电脑）或（计算机）图标，点击右键，点击属性：</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk.png" width="35%" height="35%" />
 
-<h3 id="4-找到高级系统设置，点击环境变量"><a href="#4-找到高级系统设置，点击环境变量" class="headerlink" title="4.找到高级系统设置，点击环境变量:"></a>4.找到高级系统设置，点击环境变量:</h3><img src="https://whatisyourname.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-1.png?Expires=1642307254&OSSAccessKeyId=TMP.3KguG7yu3DNsbwyR7WSY4rkCbzh27bab5TyPdrJDJBw6MUSQLRwwRKSyZiZ2fRW8x3W4Hh3EC1ekAGMZCPx6ykCgWgJ2Dp&Signature=4I4Ps7jKnUUGHGOkov72nVD7zmQ%3D" width="35%" height="35%" />
+<h3 id="4-找到高级系统设置，点击环境变量"><a href="#4-找到高级系统设置，点击环境变量" class="headerlink" title="4.找到高级系统设置，点击环境变量:"></a>4.找到高级系统设置，点击环境变量:</h3><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-1.png" width="35%" height="35%" />
 
-<h3 id="5-在系统变量中点击新建"><a href="#5-在系统变量中点击新建" class="headerlink" title="5.在系统变量中点击新建"></a>5.在系统变量中点击新建</h3><p>变量名输入 ： <strong>JAVA_HOME</strong><br>变量值： 输入你安装jdk的根目录（注意：下图是我的安装目录）<br><img src="https://whatisyourname.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-2.png?Expires=1642307283&OSSAccessKeyId=TMP.3KguG7yu3DNsbwyR7WSY4rkCbzh27bab5TyPdrJDJBw6MUSQLRwwRKSyZiZ2fRW8x3W4Hh3EC1ekAGMZCPx6ykCgWgJ2Dp&Signature=BFdupnYMldfFa9gKLbyWIhcJR%2Bw%3D" width="35%" height="35%" /><br><img src="/images/java-images/java-jdk-3.png" width="35%" height="35%" /></p>
+<h3 id="5-在系统变量中点击新建"><a href="#5-在系统变量中点击新建" class="headerlink" title="5.在系统变量中点击新建"></a>5.在系统变量中点击新建</h3><p>变量名输入 ： <strong>JAVA_HOME</strong><br>变量值： 输入你安装jdk的根目录（注意：下图是我的安装目录）<br><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-2.png" width="35%" height="35%" /><br><img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-3.png" width="35%" height="35%" /></p>
 <h3 id="6-在系统变量中找到path点击编辑："><a href="#6-在系统变量中找到path点击编辑：" class="headerlink" title="6.在系统变量中找到path点击编辑："></a>6.在系统变量中找到path点击编辑：</h3><p>在最下面加入： <strong>%JAVA_HOME%\bin</strong></p>
-<img src="/images/java-images/java-jdk-4.png" width="35%" height="35%" />
-<img src="/images/java-images/java-jdk-5.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-4.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-jdk-5.png" width="35%" height="35%" />
 
 <h3 id="7-键盘：-win-r-输入cmd-点击确定，分别输入以下命令查看是否安装成功"><a href="#7-键盘：-win-r-输入cmd-点击确定，分别输入以下命令查看是否安装成功" class="headerlink" title="7.键盘： win+r ,输入cmd,点击确定，分别输入以下命令查看是否安装成功"></a>7.键盘： win+r ,输入cmd,点击确定，分别输入以下命令查看是否安装成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java</span><br><span class="line">javac</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
-<img src="/images/java-images/java-java.png" width="35%" height="35%" />
-<img src="/images/java-images/java-javac.png" width="35%" height="35%" />
-<img src="/images/java-images/java-java-version.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-java.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-javac.png" width="35%" height="35%" />
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-java-version.png" width="35%" height="35%" />
 
 <h2 id="二：linux"><a href="#二：linux" class="headerlink" title="二：linux"></a>二：linux</h2><h3 id="1-jdk安装包（linux版）"><a href="#1-jdk安装包（linux版）" class="headerlink" title="1.jdk安装包（linux版）"></a>1.jdk安装包（linux版）</h3><p>(链接：<a href="https://pan.baidu.com/s/1qOSaDenglNK9ds1qcpsO3A">https://pan.baidu.com/s/1qOSaDenglNK9ds1qcpsO3A</a> 提取码：lxyx)</p>
 <h3 id="2-如果不是root用户，需要切换到root用户下，指令如下："><a href="#2-如果不是root用户，需要切换到root用户下，指令如下：" class="headerlink" title="2.如果不是root用户，需要切换到root用户下，指令如下："></a>2.如果不是root用户，需要切换到root用户下，指令如下：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
@@ -134,7 +134,7 @@
 
 <h3 id="7-输入命令查看是否配置成功"><a href="#7-输入命令查看是否配置成功" class="headerlink" title="7.输入命令查看是否配置成功"></a>7.输入命令查看是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
 <p>出现如下图证明配置成功</p>
-<img src="/images/java-images/java-linux.png" width="50%" height="35%" />]]></content>
+<img src="https://8888888888888888888888888888888888.oss-cn-beijing.aliyuncs.com/java-images/java-linux.png" width="50%" height="35%" />]]></content>
       <categories>
         <category>java</category>
       </categories>
